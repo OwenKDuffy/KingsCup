@@ -20,7 +20,7 @@ with open("rules.txt", "r") as data:
 #             }
 suit = list(range(1, 14))
 deck = suit + suit + suit + suit
-
+print("Welcome to Kings!\nSo you want to play but have no cards.\nNever Fear! Simply Press Enter to draw a card from a randomly shuffled deck.\nThe card number will be shown and the rule displayed next to it.\nTo customise the rules to your own liking simply change the rules in the rules.txt file.")
 random.shuffle(deck)
 kingsCount = 0
 while(len(deck) > 0):
