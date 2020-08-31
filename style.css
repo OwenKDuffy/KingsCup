@@ -1,12 +1,13 @@
 body {
     text-align: center;
-    background-color: #EEE;
+    background-color: #FFEFD3;
     width: 70%;
-    margin:40px auto;
+    height: 100%;
+    margin: 0px auto;
     max-width:650px;
     line-height:1.6;
     font-size:18px;
-    color:#444;
+    color:#363537;
     padding:0
 }
 h1,h2,h3 {
@@ -15,16 +16,7 @@ h1,h2,h3 {
 
 div {
     width: 300px;
-    border: 1px solid #add8e6aa;
+    border: 10px solid #7E846Baa;
     padding: 50px;
     margin: 0 auto;
-}
-
-.socials {
-    margin: 0 auto;
-    text-align: center;
-    position: absolute;
-    bottom: 10px;
-    width: 50%;
-  /* border: 3px solid #8AC007;  */
 }
