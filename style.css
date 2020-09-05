@@ -1,9 +1,10 @@
 body {
+    /* border: 1px solid red; */
     text-align: center;
     background-color: #FFEFD3;
     width: 70%;
     height: 100%;
-    margin: 0px auto;
+    margin: 40px auto;
     max-width:650px;
     line-height:1.6;
     font-size:18px;
@@ -15,8 +16,10 @@ h1,h2,h3 {
 }
 
 div {
-    width: 300px;
-    border: 10px solid #7E846Baa;
+    position: relative;
+    width: 60%;
+    max-width: 300px;
+    border: 1px solid #7E846Baa;
     padding: 50px;
     margin: 0 auto;
 }
