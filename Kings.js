@@ -1,25 +1,25 @@
 // include Math;
-var rules = { 1: "Waterfall",
-2: "You",
-3: "Me",
-4: "Floor",
-5: "Guys",
-6: "Chicks",
-7: "Heaven",
-8: "Mate",
-9: "Rhyme",
-10: "Categories",
-11: "Never Have I Ever",
-12: "Quizmaster",
-13: "King"
+// var rules = { 1: "Waterfall",
+// 2: "You",
+// 3: "Me",
+// 4: "Floor",
+// 5: "Guys",
+// 6: "Chicks",
+// 7: "Heaven",
+// 8: "Mate",
+// 9: "Rhyme",
+// 10: "Categories",
+// 11: "Never Have I Ever",
+// 12: "Quizmaster",
+// 13: "King"
+// };
+var suits = {0: "\u2665",
+1: "\u2666",
+2: "\u2663",
+3: "\u2660"
 };
-var suits = {0: "\u2660",
-            1: "\u2665",
-            2: "\u2666",
-            3: "\u2663"
-};
+//0:hearts 1:diamonds 2:clubs 3:spades
 
-console.log("Javascript Working");
 var deck = setDeck();
 kingsCount = 0;
 
@@ -32,29 +32,6 @@ function setDeck(){
     shuffle(deck)
     return deck
 }
-function readRank(card){
-    switch(card) {
-  case 1:
-    return "Ace"
-  case 11:
-    return "Jack"
-  case 12:
-    return "Queen"
-  case 13:
-    return "King"
-  default:
-    return card
-}
-}
-function readRule(card){
-    rank = (card % 13) + 1;
-    return rules[rank];
-}
-function readCard(card){
-    rank = (card % 13) + 1
-    suit = Math.floor(card / 13);
-    return "" + readRank(rank) + " of " + suits[suit];
-}
 function shuffle(deck) {
     for (var i = deck.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
@@ -63,19 +40,75 @@ function shuffle(deck) {
         deck[j] = temp;
     }
 }
+
+function showRules() {
+    var list = document.getElementById("rulesList");
+    var  displayCurrent = list.style.display;
+    if(displayCurrent == "none"){
+        document.getElementById("showRules").innerHTML = "Collapse Rules";
+        list.style.display = "block";
+    }
+    else if(displayCurrent == "block"){
+        document.getElementById("showRules").innerHTML = "Show Rules";
+        list.style.display = "none"
+    }
+}
+function readRank(card){
+    switch(card) {
+        case 1:
+        return "Ace"
+        case 11:
+        return "Jack"
+        case 12:
+        return "Queen"
+        case 13:
+        return "King"
+        default:
+        return card
+    }
+}
+function readRule(card){
+    rank = (card % 13) + 1;
+    return document.getElementById(readRank(rank)).value
+    // return rules[rank];
+}
+function readCard(card){
+    rank = (card % 13) + 1
+    suit = Math.floor(card / 13);
+    return "" + readRank(rank) + " of " + suits[suit];
+}
+
+function getCardImage(drawnCard){
+    var rank = (drawnCard % 13)
+    var suit = Math.floor(drawnCard / 13);
+    // console.log(rank + " " + suit);
+    var xPos = 180 - (180 * (rank));
+    var yPos = -1 * (217 * suit);
+    // console.log(xPos + " " + yPos);
+    var outputString = "" + xPos + "px " + yPos + "px";
+    // console.log(outputString);
+    return outputString;
+}
 function drawCard(){
     if(deck.length > 0){
         drawnCard = deck.shift();
-        console.log(drawnCard);
+        // console.log(drawnCard);
         if((drawnCard % 13) + 1 == 13){
             kingsCount++;
-            console.log(kingsCount);
-            if(kingsCount == 4){
-                document.getElementById("card").innerHTML = "KINGS CUP!!!";
-                return;
-            }
+            // console.log(kingsCount);
+            // if(kingsCount == 4){
+            //     document.getElementById("card").innerHTML = "KINGS CUP!!!";
+            //     return;
+            // }
         }
-            document.getElementById("card").innerHTML = "" + readCard(drawnCard);
+        document.getElementById("card").style.backgroundPosition = "" + getCardImage(drawnCard);
+        document.getElementById("card").alt = "" + readCard(drawnCard);
+        // document.getElementById("card").innerHTML = "" + readCard(drawnCard);
+        if(kingsCount == 4){
+            document.getElementById("rule").innerHTML = "KINGS CUP!!!";
+        }
+        else {
             document.getElementById("rule").innerHTML = "" + readRule(drawnCard);
+        }
     }
 }
