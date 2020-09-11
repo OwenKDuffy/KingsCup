@@ -5,52 +5,59 @@
     <link rel="stylesheet" href="style.css">
     <script src="Kings.js"></script>
     <title>Kings Cup</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
     <h1>Welcome to Kings!</h1>
-    <p> So you want to play but have no cards. Never Fear!</p><p>Simply Press Enter to draw a card from a randomly shuffled deck. The card number will be shown and the rule displayed with it.</p><p>To customise the rules to your own liking simply change the rules to your own houserules.</p>
+    <p> So you want to play but have no cards. Never Fear!</p>
+    <p> Dont know Kings? Learn about the game <a href="https://en.wikipedia.org/wiki/Kings_(game)">here</a></p><p>Simply Press below to draw a card from a randomly shuffled deck. The card number will be shown and the rule displayed with it.</p><p>To customise the rules to your own liking simply change the rules to your own houserules.</p>
     <div class="rules">
         <button id ="showRules" onClick ="showRules()">Show Rules</button>
         <form id = "rulesList" style="display: none">
             <label for="Ace">Ace:</label>
-            <input type="text" id="Ace" name="Ace" value="Waterfall"><br><br>
-            <label for="fname">2:</label>
-            <input type="text" id="2" name="2" value="You"><br><br>
-            <label for="fname">3:</label>
-            <input type="text" id="3" name="3" value="Me"><br><br>
-            <label for="fname">4:</label>
-            <input type="text" id="4" name="4" value="Floor"><br><br>
-            <label for="fname">5:</label>
-            <input type="text" id="5" name="5" value="Guys"><br><br>
-            <label for="fname">6:</label>
-            <input type="text" id="6" name="6" value="Chicks"><br><br>
-            <label for="fname">7:</label>
-            <input type="text" id="7" name="7" value="Heaven"><br><br>
-            <label for="fname">8:</label>
-            <input type="text" id="8" name="8" value="Mate"><br><br>
-            <label for="fname">9:</label>
-            <input type="text" id="9" name="9" value="Rhyme"><br><br>
-            <label for="fname">10:</label>
-            <input type="text" id="10" name="10" value="Categories"><br><br>
-            <label for="fname">Jack:</label>
-            <input type="text" id="Jack" name="Jack" value="Never Have I Ever"><br><br>
-            <label for="fname">Queen:</label>
-            <input type="text" id="Queen" name="Queen" value="Quizmaster"><br><br>
-            <label for="fname">King:</label>
-            <input type="text" id="King" name="King" value="King"><br><br>
+            <input type="text" id="Ace" name="Ace" value="Waterfall"><br>
+            <label for="2">2:</label>
+            <input type="text" id="2" name="2" value="You"><br>
+            <label for="3">3:</label>
+            <input type="text" id="3" name="3" value="Me"><br>
+            <label for="4">4:</label>
+            <input type="text" id="4" name="4" value="Floor"><br>
+            <label for="5">5:</label>
+            <input type="text" id="5" name="5" value="Guys"><br>
+            <label for="6">6:</label>
+            <input type="text" id="6" name="6" value="Chicks"><br>
+            <label for="7">7:</label>
+            <input type="text" id="7" name="7" value="Heaven"><br>
+            <label for="8">8:</label>
+            <input type="text" id="8" name="8" value="Mate"><br>
+            <label for="9">9:</label>
+            <input type="text" id="9" name="9" value="Rhyme"><br>
+            <label for="10">10:</label>
+            <input type="text" id="10" name="10" value="Categories"><br>
+            <label for="Jack">Jack:</label>
+            <input type="text" id="Jack" name="Jack" value="Never Have I Ever"><br>
+            <label for="Queen">Queen:</label>
+            <input type="text" id="Queen" name="Queen" value="Quizmaster"><br>
+            <label for="King">King:</label>
+            <input type="text" id="King" name="King" value="King"><br>
         </form>
     </div>
     <div id="game-window">
+        <h2 id = "deckCount">52 Cards Remaining</h2>
         <div id = "card" style="background-position:0px 217px"></div>
         <!-- <h1 id = "card">Your Card</h1> -->
         <h2 id = "rule"><br></h2>
         <button id="draw" onclick="drawCard()">Draw</button>
+        <button id="reset-deck" onclick="resetDeck()">Reset Deck</button>
     </div>
     <div id="socials">
         By OwenKDuffy
-        <br>
-        <a href = "http://www.github.com/OwenKDuffy">My Github</a>
-        <a href = "http://www.linkedin.com/in/owenkduffy/">My LinkedIn</a>
+    <br>
+        <nobr><a href = "http://owenkduffy.github.io/">My Site</a></nobr>
+        <nobr><a href = "http://www.github.com/OwenKDuffy">My Github</a></nobr>
+        <nobr><a href = "http://www.linkedin.com/in/owenkduffy/">My LinkedIn</a></nobr>
+    <br>
+        <img id="hitsCount" src="https://hitcounter.pythonanywhere.com/count/tag.svg" alt="Hits">
     </div>
 </body>
 </html>

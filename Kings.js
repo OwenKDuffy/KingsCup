@@ -23,6 +23,13 @@ var suits = {0: "\u2665",
 var deck = setDeck();
 kingsCount = 0;
 
+function resetDeck(){
+    deck = setDeck();
+    document.getElementById("deckCount").innerHTML = "" + deck.length +  " Cards Remaining";
+    document.getElementById("card").style.backgroundPosition = "0px 217px";
+    document.getElementById("rule").innerHTML = "<br>";
+    document.getElementById("draw").style.display = "inline-block";
+}
 function setDeck(){
     var deck = [];
     for (var i = 0; i <= 51; i++) {
@@ -92,23 +99,21 @@ function getCardImage(drawnCard){
 function drawCard(){
     if(deck.length > 0){
         drawnCard = deck.shift();
-        // console.log(drawnCard);
         if((drawnCard % 13) + 1 == 13){
             kingsCount++;
-            // console.log(kingsCount);
-            // if(kingsCount == 4){
-            //     document.getElementById("card").innerHTML = "KINGS CUP!!!";
-            //     return;
-            // }
         }
         document.getElementById("card").style.backgroundPosition = "" + getCardImage(drawnCard);
         document.getElementById("card").alt = "" + readCard(drawnCard);
-        // document.getElementById("card").innerHTML = "" + readCard(drawnCard);
-        if(kingsCount == 4){
+        document.getElementById("deckCount").innerHTML = "" + deck.length +  " Cards Remaining";
+        if((drawnCard % 13) + 1 == 13 && kingsCount == 4){
             document.getElementById("rule").innerHTML = "KINGS CUP!!!";
+            // document.getElementById("draw").style.display = "hidden";
         }
         else {
             document.getElementById("rule").innerHTML = "" + readRule(drawnCard);
         }
+    }
+    if(deck.length == 0){
+        document.getElementById("draw").style.display = "none";
     }
 }
