@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="Kings.js"></script>
+    <script type="module" src="Kings.js"></script>
     <title>Kings Cup</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="128x128" href="KingsShortcut128.png">
+    <link rel="icon" sizes="192x192" href="KingsShortcut192.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="128x128" href="KingsShortcut128.png">
+    <link rel="icon" sizes="192x192" href="KingsShortcut192.png">
 </head>
+
 <body>
     <h1>Welcome to Kings!</h1>
-    <p> So you want to play but have no cards. Never Fear!</p>
-    <p> Dont know Kings? Learn about the game <a href="https://en.wikipedia.org/wiki/Kings_(game)">here</a></p><p>Simply Press below to draw a card from a randomly shuffled deck. The card number will be shown and the rule displayed with it.</p><p>To customise the rules to your own liking simply change the rules to your own houserules.</p>
+        <p>So you want to play but have no cards. Never Fear!</p>
+        <p>Dont know Kings? Learn about the game <a href="https://en.wikipedia.org/wiki/Kings_(game)">here</a></p>
+        <p>Press on the card or the "Draw" button to draw a card from a randomly shuffled deck. The card number will be
+            shown and the rule displayed with it.</p>
+        <p>To see the rules, or to customise to your own liking click the "Show Rules" button and modify any rule(s) to
+            your own houserules.</p>
+        <p>To start over, simply click the "Reset Deck" button and the deck will be reset and reshuffled.</p>
+        <p>On mobile? Click the "Fullscreen" button for a more immersive experience!</p>
     <div class="rules">
-        <button id ="showRules" onClick ="showRules()">Show Rules</button>
-        <form id = "rulesList" style="display: none">
+            <button id="show-rules">Show Rules</button>
+            <form id="rules-list" style="display: none">
             <label for="1">Ace:</label>
             <input type="text" id="1" name="Ace" value="Waterfall"><br>
             <label for="2">2:</label>
@@ -39,25 +51,28 @@
             <label for="12">Queen:</label>
             <input type="text" id="12" name="12" value="Quizmaster"><br>
             <label for="13">King:</label>
-            <input type="text" id="13" name="13" value="King"><br>
+                <input disabled type="text" id="13" name="13" value="King's Cup"><br>
         </form>
     </div>
     <div id="game-window">
-        <h2 id = "deckCount">52 Cards Remaining</h2>
-        <div id = "card" style="background-position:0px 217px"></div>
-        <!-- <h1 id = "card">Your Card</h1> -->
-        <h2 id = "rule"><br></h2>
-        <button id="draw" onclick="drawCard()">Draw</button>
-        <button id="reset-deck" onclick="resetDeck()">Reset Deck</button>
+            <button id="fullscreen-btn"> Fullscreen</button>
+            <h2 id="deck-count">52 Cards Remaining</h2>
+            <div id="card" style="background-position:0px 217px"></div>
+            <h2 id="rule"><br></h2>
+            <div class="controls">
+                <button id="draw">Draw</button>
+                <button id="reset-deck">Reset Deck</button>
+            </div>
     </div>
     <div id="socials">
         By OwenKDuffy
     <br>
-        <nobr><a href = "http://owenkduffy.github.io/">My Site</a></nobr>
-        <nobr><a href = "http://www.github.com/OwenKDuffy">My Github</a></nobr>
-        <nobr><a href = "http://www.linkedin.com/in/owenkduffy/">My LinkedIn</a></nobr>
+            <nobr><a href="http://owenkduffy.github.io/">My Site</a></nobr>
+            <nobr><a href="http://www.github.com/OwenKDuffy">My Github</a></nobr>
+            <nobr><a href="http://www.linkedin.com/in/owenkduffy/">My LinkedIn</a></nobr>
     <br>
-        <img id="hitsCount" src="https://hitcounter.pythonanywhere.com/count/tag.svg" alt="Hits">
     </div>
+    </main>
 </body>
+
 </html>

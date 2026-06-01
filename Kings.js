@@ -1,22 +1,26 @@
-let suits = {0: "\u2665",
+const suits = {
+    0: "\u2665",
 1: "\u2666",
 2: "\u2663",
 3: "\u2660"
 };
 //0:hearts 1:diamonds 2:clubs 3:spades
 
-let deck = setDeck();
-kingsCount = 0;
+var deck = setDeck();
+var kingsCount = 0;
 
-function resetDeck(){
+// Export functions for use in other modules
+export { resetDeck, showRules, drawCard, fullscreenMode };
+
+function resetDeck() {
     deck = setDeck();
-    document.getElementById("deckCount").innerHTML = `${deck.length} Cards Remaining`;
+    document.getElementById("deck-count").innerHTML = `${deck.length} Cards Remaining`;
     document.getElementById("card").style.backgroundPosition = "0px 217px";
     document.getElementById("rule").innerHTML = "<br>";
     document.getElementById("draw").style.display = "inline-block";
 }
-function setDeck(){
-    let deck = [...Array(52).keys()];
+function setDeck() {
+    deck = [...Array(52).keys()];
     shuffle(deck)
     return deck
 }
@@ -30,17 +34,17 @@ function shuffle(deck) {
 }
 
 function showRules() {
-    const list = document.getElementById("rulesList");
-    if(list.style.display == "none"){
-        document.getElementById("showRules").innerHTML = "Collapse Rules";
+    const list = document.getElementById("rules-list");
+    if (list.style.display == "none") {
+        document.getElementById("show-rules").innerHTML = "Collapse Rules";
         list.style.display = "block";
         return;
     }
-    document.getElementById("showRules").innerHTML = "Show Rules";
+    document.getElementById("show-rules").innerHTML = "Show Rules";
     list.style.display = "none"
 }
-function readRank(card){
-    switch(card) {
+function readRank(card) {
+    switch (card) {
         case 1:
         return "Ace"
         case 11:
@@ -53,26 +57,28 @@ function readRank(card){
         return card
     }
 }
-function readRule(card){
-    rank = (card % 13) + 1;
-    return document.getElementById(rank).value
+function readRule(card) {
+    let rank = (card % 13) + 1;
+    return rank == 13
+        ? `King ${kingsCount}/4`
+        : document.getElementById(rank).value;
 }
-function readCard(card){
-    rank = (card % 13) + 1
-    suit = Math.floor(card / 13);
+function readCard(card) {
+    let rank = (card % 13) + 1;
+    let suit = Math.floor(card / 13);
     return `${readRank(rank)} of ${suits[suit]}`;
 }
 
-function getCardImage(drawnCard){
+function getCardImage(drawnCard) {
     let rank = (drawnCard % 13)
     let suit = Math.floor(drawnCard / 13);
     let xPos = 180 - (180 * (rank));
     let yPos = -1 * (217 * suit);
     return `${xPos}px ${yPos}px`;
 }
-function drawCard(){
-    drawnCard = deck.shift();
-    if((drawnCard % 13) + 1 == 13){
+function drawCard() {
+    let drawnCard = deck.shift();
+    if ((drawnCard % 13) + 1 == 13) {
         kingsCount++;
     }
     document.getElementById("card").style.backgroundPosition = `${getCardImage(drawnCard)}`;

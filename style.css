@@ -1,6 +1,9 @@
 body {
     text-align: center;
+
     background-color: #FFEFD3;
+}
+main{
     width: 70%;
     height: 100%;
     margin: 40px auto;
@@ -16,13 +19,39 @@ h1,h2,h3 {
 
 div {
     position: relative;
-    width: 60%;
-    max-width: 300px;
+    width: 80%;
+    /* max-width: 300px; */
     border: 1px solid #7E846Baa;
     padding: 50px;
     margin: 0 auto;
+    background-color: #FFEFD3;
 }
-
+.overlay{
+    display: none;
+    padding: 0;
+    background-color: #000000aa;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 4;
+    max-width: 100%;
+}
+.fullscreenGame {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    max-width: inherit;
+}
+#fullscreen-btn {
+    position: absolute;
+    top: 10px;
+    right:10px;
+}
 .rules{
     padding: 20px 50px;
 }
@@ -41,6 +70,13 @@ label[for="King"], #King{
 
 div[id="game-window"] button {
     margin: 15px;
+}
+
+.controls {
+    width: 100%;
+    padding: 0;
+    border: none;
+    max-width: 100%;
 }
 button {
     min-width: 150px;
