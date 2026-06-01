@@ -1,8 +1,8 @@
 const suits = {
     0: "\u2665",
-1: "\u2666",
-2: "\u2663",
-3: "\u2660"
+    1: "\u2666",
+    2: "\u2663",
+    3: "\u2660"
 };
 //0:hearts 1:diamonds 2:clubs 3:spades
 
@@ -46,15 +46,15 @@ function showRules() {
 function readRank(card) {
     switch (card) {
         case 1:
-        return "Ace"
+            return "Ace"
         case 11:
-        return "Jack"
+            return "Jack"
         case 12:
-        return "Queen"
+            return "Queen"
         case 13:
-        return "King"
+            return "King"
         default:
-        return card
+            return card
     }
 }
 function readRule(card) {
@@ -83,13 +83,35 @@ function drawCard() {
     }
     document.getElementById("card").style.backgroundPosition = `${getCardImage(drawnCard)}`;
     document.getElementById("card").alt = `${readCard(drawnCard)}`;
-    document.getElementById("deckCount").innerHTML = `${deck.length} Cards Remaining`;
-    if((drawnCard % 13) + 1 == 13 && kingsCount == 4){
+    document.getElementById("deck-count").innerHTML = `${deck.length} Cards Remaining`;
+    if ((drawnCard % 13) + 1 == 13 && kingsCount == 4) {
         document.getElementById("rule").innerHTML = "KINGS CUP!!!";
         return;
     }
     document.getElementById("rule").innerHTML = `${readRule(drawnCard)}`;
-    if(deck.length === 0){
+    if (deck.length === 0) {
         document.getElementById("draw").style.display = "none";
     }
 }
+
+function fullscreenMode() {
+    const overlay = document.getElementById("overlay");
+    var fs = document.getElementById("game-window");
+    if (overlay.style.display === "block") {
+        document.querySelector('.rules').after(fs);
+        document.getElementById('fullscreen-btn').innerText = "Fullscreen";
+        overlay.style.display = "none";
+        return;
+    }
+    overlay.appendChild(fs);
+    document.getElementById('fullscreen-btn').innerText = "Exit fullscreen";
+    overlay.style.display = "block";
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('show-rules')?.addEventListener('click', showRules);
+    document.getElementById('fullscreen-btn')?.addEventListener('click', fullscreenMode);
+    document.getElementById('card')?.addEventListener('click', drawCard);
+    document.getElementById('draw')?.addEventListener('click', drawCard);
+    document.getElementById('reset-deck')?.addEventListener('click', resetDeck);
+});

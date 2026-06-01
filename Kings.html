@@ -14,7 +14,9 @@
 </head>
 
 <body>
-    <h1>Welcome to Kings!</h1>
+    <div id="overlay" class="overlay"></div>
+    <main>
+        <h1>Welcome to Kings!</h1>
         <p>So you want to play but have no cards. Never Fear!</p>
         <p>Dont know Kings? Learn about the game <a href="https://en.wikipedia.org/wiki/Kings_(game)">here</a></p>
         <p>Press on the card or the "Draw" button to draw a card from a randomly shuffled deck. The card number will be
@@ -23,39 +25,39 @@
             your own houserules.</p>
         <p>To start over, simply click the "Reset Deck" button and the deck will be reset and reshuffled.</p>
         <p>On mobile? Click the "Fullscreen" button for a more immersive experience!</p>
-    <div class="rules">
+        <div class="rules">
             <button id="show-rules">Show Rules</button>
             <form id="rules-list" style="display: none">
-            <label for="1">Ace:</label>
-            <input type="text" id="1" name="Ace" value="Waterfall"><br>
-            <label for="2">2:</label>
-            <input type="text" id="2" name="2" value="You"><br>
-            <label for="3">3:</label>
-            <input type="text" id="3" name="3" value="Me"><br>
-            <label for="4">4:</label>
-            <input type="text" id="4" name="4" value="Floor"><br>
-            <label for="5">5:</label>
-            <input type="text" id="5" name="5" value="Guys"><br>
-            <label for="6">6:</label>
-            <input type="text" id="6" name="6" value="Chicks"><br>
-            <label for="7">7:</label>
-            <input type="text" id="7" name="7" value="Heaven"><br>
-            <label for="8">8:</label>
-            <input type="text" id="8" name="8" value="Mate"><br>
-            <label for="9">9:</label>
-            <input type="text" id="9" name="9" value="Rhyme"><br>
-            <label for="10">10:</label>
-            <input type="text" id="10" name="10" value="Categories"><br>
-            <label for="11">Jack:</label>
-            <input type="text" id="11" name="11" value="Never Have I Ever"><br>
-            <label for="12">Queen:</label>
-            <input type="text" id="12" name="12" value="Quizmaster"><br>
-            <label for="13">King:</label>
+                <label for="1">Ace:</label>
+                <input type="text" id="1" name="Ace" value="Waterfall"><br>
+                <label for="2">2:</label>
+                <input type="text" id="2" name="2" value="You"><br>
+                <label for="3">3:</label>
+                <input type="text" id="3" name="3" value="Me"><br>
+                <label for="4">4:</label>
+                <input type="text" id="4" name="4" value="Floor"><br>
+                <label for="5">5:</label>
+                <input type="text" id="5" name="5" value="Guys"><br>
+                <label for="6">6:</label>
+                <input type="text" id="6" name="6" value="Chicks"><br>
+                <label for="7">7:</label>
+                <input type="text" id="7" name="7" value="Heaven"><br>
+                <label for="8">8:</label>
+                <input type="text" id="8" name="8" value="Mate"><br>
+                <label for="9">9:</label>
+                <input type="text" id="9" name="9" value="Rhyme"><br>
+                <label for="10">10:</label>
+                <input type="text" id="10" name="10" value="Categories"><br>
+                <label for="11">Jack:</label>
+                <input type="text" id="11" name="11" value="Never Have I Ever"><br>
+                <label for="12">Queen:</label>
+                <input type="text" id="12" name="12" value="Quizmaster"><br>
+                <label for="13">King:</label>
                 <input disabled type="text" id="13" name="13" value="King's Cup"><br>
-        </form>
-    </div>
-    <div id="game-window">
-            <button id="fullscreen-btn"> Fullscreen</button>
+            </form>
+        </div>
+        <div id="game-window">
+            <button id="fullscreen-btn">Fullscreen</button>
             <h2 id="deck-count">52 Cards Remaining</h2>
             <div id="card" style="background-position:0px 217px"></div>
             <h2 id="rule"><br></h2>
@@ -63,15 +65,15 @@
                 <button id="draw">Draw</button>
                 <button id="reset-deck">Reset Deck</button>
             </div>
-    </div>
-    <div id="socials">
-        By OwenKDuffy
-    <br>
+        </div>
+        <div id="socials">
+            By OwenKDuffy
+            <br>
             <nobr><a href="http://owenkduffy.github.io/">My Site</a></nobr>
             <nobr><a href="http://www.github.com/OwenKDuffy">My Github</a></nobr>
             <nobr><a href="http://www.linkedin.com/in/owenkduffy/">My LinkedIn</a></nobr>
-    <br>
-    </div>
+            <br>
+        </div>
     </main>
 </body>
 

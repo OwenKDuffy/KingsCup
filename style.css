@@ -1,32 +1,35 @@
 body {
     text-align: center;
-
     background-color: #FFEFD3;
 }
-main{
+
+main {
     width: 70%;
     height: 100%;
     margin: 40px auto;
-    max-width:650px;
-    line-height:1.6;
-    font-size:18px;
-    color:#363537;
-    padding:0
+    max-width: 650px;
+    line-height: 1.6;
+    font-size: 18px;
+    color: #363537;
+    padding: 0
 }
-h1,h2,h3 {
+
+h1,
+h2,
+h3 {
     line-height: 1.2
 }
 
 div {
     position: relative;
     width: 80%;
-    /* max-width: 300px; */
     border: 1px solid #7E846Baa;
     padding: 50px;
     margin: 0 auto;
     background-color: #FFEFD3;
 }
-.overlay{
+
+.overlay {
     display: none;
     padding: 0;
     background-color: #000000aa;
@@ -38,7 +41,8 @@ div {
     z-index: 4;
     max-width: 100%;
 }
-.fullscreenGame {
+
+.overlay #game-window {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -47,25 +51,25 @@ div {
     height: 100%;
     max-width: inherit;
 }
+
 #fullscreen-btn {
     position: absolute;
     top: 10px;
-    right:10px;
+    right: 10px;
 }
-.rules{
+
+.rules {
     padding: 20px 50px;
 }
-.rules form{
+
+.rules form {
     padding: 20px 0px;
 }
 
-.rules input{
-    float:right;
-    width:100%;
+.rules input {
+    float: right;
+    width: 100%;
     font-size: 18px;
-}
-label[for="King"], #King{
-    display: none;
 }
 
 div[id="game-window"] button {
@@ -78,6 +82,7 @@ div[id="game-window"] button {
     border: none;
     max-width: 100%;
 }
+
 button {
     min-width: 150px;
     min-height: 30px;
@@ -86,9 +91,7 @@ button {
     font-size: 18px;
     padding: 5px;
 }
-#hitsCount {
-    padding-top: 15px;
-}
+
 #card {
     width: 80px;
     height: 117px;
